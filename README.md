@@ -9,10 +9,10 @@ npm install
 
 Fetch 10 pages, starting from the last known chapter:
 ```bash
-npm getNew
+npm run getNew
 ```
 
 Fetch all images from previously fetched pages:
 ```bash
-npm getCache
+npm run getCache
 ```
