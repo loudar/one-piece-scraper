@@ -1,0 +1,24 @@
+{
+  "name": "one-piece-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getChapters.js",
+  "scripts": {
+    "getNew": "node getChapters.js",
+    "getCache": "node getAllKnown.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "canvas": "^2.11.2",
+    "cheerio": "^1.0.0-rc.12",
+    "jquery": "^3.7.1",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^21.3.1",
+    "webpage": "^0.3.0"
+  }
+}
