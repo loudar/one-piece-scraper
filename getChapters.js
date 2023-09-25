@@ -30,6 +30,25 @@ function getImage(url, current, index) {
         });
 }
 
+async function scrollToBottom(page) {
+    await page.evaluate(async () => {
+        await new Promise((resolve, reject) => {
+            let totalHeight = 0;
+            const distance = 300;
+            const timer = setInterval(() => {
+                const scrollHeight = document.body.scrollHeight;
+                window.scrollBy(0, distance);
+                totalHeight += distance;
+
+                if (totalHeight >= scrollHeight) {
+                    clearInterval(timer);
+                    resolve();
+                }
+            }, 100);
+        });
+    });
+}
+
 async function fetchData(chapter, pages, saveHtml = false) {
 
     for(let i = 0; i < pages; i++) {
@@ -50,6 +69,7 @@ async function fetchData(chapter, pages, saveHtml = false) {
         }
 
         await page.waitForSelector('#wp-manga-current-chap');
+        await scrollToBottom(page);
         const imgUrls = await page.evaluate(() =>
             Array.from(document.querySelectorAll('.wp-manga-chapter-img')).map(img => img.src)
         );
