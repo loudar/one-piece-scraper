@@ -1,11 +1,14 @@
-# One Piece scraper
+# Prerequisites
 
-## How to run
+- [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
 
 Install dependencies:
 ```bash
 npm install
 ```
+
+# How to run
 
 Fetch 10 pages, starting from the last known chapter:
 ```bash
